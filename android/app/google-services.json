@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "237876913483",
+    "project_id": "val-e-ae",
+    "storage_bucket": "val-e-ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237876913483:android:1f6fb09925e84a2047b4ce",
+        "android_client_info": {
+          "package_name": "com.ae.vale"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237876913483-gv4jr2kltco78oaeom3nnifbo00va76d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDubuvsW3QO1FO8ku7ABj8vrWRiBC61RDs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237876913483-gv4jr2kltco78oaeom3nnifbo00va76d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "237876913483-030dt6carsb9mb1g86u6nue4htgm2iln.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ae.valeApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
