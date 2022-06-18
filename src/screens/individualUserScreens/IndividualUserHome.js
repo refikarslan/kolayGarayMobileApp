@@ -31,14 +31,9 @@ export class IndividualUserHome extends Component {
 
   state = {
     images: [
-      'https://val-e.app/sliderVal-eNew/1.jpeg',
-      'https://val-e.app/sliderVal-eNew/2.jpeg',
-      'https://val-e.app/sliderVal-eNew/3.jpeg',
-      'https://val-e.app/sliderVal-eNew/4.jpeg',
-      'https://val-e.app/sliderVal-eNew/5.jpeg',
-      'https://val-e.app/sliderVal-eNew/6.jpeg',
-      'https://val-e.app/sliderVal-eNew/7.jpeg',
-      'https://val-e.app/sliderVal-eNew/8.jpeg',
+      'https://kolaygaraj.com/sliderHome/1.jpg',
+      'https://kolaygaraj.com/sliderHome/2.jpg',
+      'https://kolaygaraj.com/sliderHome/3.jpg',
     ],
   };
 
@@ -92,7 +87,7 @@ export class IndividualUserHome extends Component {
 
   navigateCarRentService() {
     Alert.alert(
-      'VAL-E',
+      'Kolay Garaj',
       'Çok yakında avantajlı fiyatlarla kiralık araçları buradan bulabileceksin, bizi takip etmeye devam et.',
       [{text: 'Tamam', onPress: () => null}],
     );
@@ -100,8 +95,8 @@ export class IndividualUserHome extends Component {
 
   navigateGetTaxiService() {
     Alert.alert(
-      'VAL-E',
-      'Çok yakında VAL-E ile Taksi anında kapında, bizi takip etmeye devam et.',
+      'Kolay Garaj',
+      'Çok yakında Kolay Garaj ile Taksi anında kapında, bizi takip etmeye devam et.',
       [{text: 'Tamam', onPress: () => null}],
     );
   }
@@ -181,20 +176,8 @@ export class IndividualUserHome extends Component {
               <Text style={styles.textButton}>OTO ÇEKİCİ</Text>
             </View>
           </TouchableOpacity>
-
-          <TouchableOpacity onPress={this.navigateCarWashService}>
-            <View style={styles.buttonView}>
-              <Image
-                source={require('../../assets/images/iconPng/carWash.png')}
-                style={{
-                  width: 60,
-                  height: 60,
-                  marginBottom: 5,
-                }}
-              />
-              <Text style={styles.textButton}>OTO KUAFÖR</Text>
-            </View>
-          </TouchableOpacity>
+        </View>
+        <View style={styles.grup_2}>
           <TouchableOpacity onPress={this.navigateCarTireService}>
             <View style={styles.buttonView}>
               <Image
@@ -210,52 +193,6 @@ export class IndividualUserHome extends Component {
             </View>
           </TouchableOpacity>
         </View>
-
-        <View style={styles.grup_2}>
-          <TouchableOpacity onPress={this.navigateCarBatteryService}>
-            <View style={styles.buttonView}>
-              <Image
-                source={require('../../assets/images/iconPng/carBattery.png')}
-                style={{
-                  width: 60,
-                  height: 60,
-                  marginBottom: 5,
-                }}
-              />
-
-              <Text style={styles.textButton}>OTO AKÜ</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={this.navigateCarKeyService}>
-            <View style={styles.buttonView}>
-              <Image
-                source={require('../../assets/images/iconPng/carKey.png')}
-                style={{
-                  width: 60,
-                  height: 60,
-                  marginBottom: 5,
-                }}
-              />
-
-              <Text style={styles.textButton}>OTO ANAHTAR</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={this.navigateCarPartsService}>
-            <View style={styles.buttonView}>
-              <Image
-                source={require('../../assets/images/iconPng/carParts.png')}
-                style={{
-                  width: 60,
-                  height: 60,
-                  marginBottom: 5,
-                }}
-              />
-
-              <Text style={styles.textButton}>OTO PARÇA</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
-
         <View style={styles.grup_2}>
           <TouchableOpacity onPress={this.navigateCarRepairService}>
             <View style={styles.buttonView}>
@@ -269,34 +206,6 @@ export class IndividualUserHome extends Component {
               />
 
               <Text style={styles.textButton}>OTO SERVİS</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={this.navigateCarRentService}>
-            <View style={styles.buttonView}>
-              <Image
-                source={require('../../assets/images/iconPng/carRent.png')}
-                style={{
-                  width: 60,
-                  height: 60,
-                  marginBottom: 5,
-                }}
-              />
-
-              <Text style={styles.textButton}>KİRALIK ARAÇ</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={this.navigateGetTaxiService}>
-            <View style={styles.buttonView}>
-              <Image
-                source={require('../../assets/images/iconPng/getTaxi.png')}
-                style={{
-                  width: 60,
-                  height: 60,
-                  marginBottom: 5,
-                }}
-              />
-
-              <Text style={styles.textButton}>TAKSİ ÇAĞIR</Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -355,8 +264,8 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.75,
     shadowRadius: 0,
-    borderRadius: 5,
-    width: (width - 50) / 3.1,
+    borderRadius: 50,
+    width: width - 50,
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: 10,

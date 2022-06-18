@@ -13,19 +13,19 @@ import Accordion from 'react-native-collapsible/Accordion';
 
 const SECTIONS = [
   {
-    title: 'VAL-E uygulaması nedir ? ',
+    title: 'Kolay Garaj uygulaması nedir ? ',
     content:
-      'Val-e uygulaması, arabalarınıza, motorlarınıza veya taşıtlarınıza dair ihtiyaç duyulacak hizmetler için, kolayca teklif almanızı, teklif veren hizmet sağlayıcısının performans puanlarını görüntülemenizi ve teklifler arasından size en uygununu seçmenize olanak sağlamayı amaçlamaktadır. Uygulama kapsamında binlerce hizmet sağlayıcı, tek tıkla anında erişilebilir olacaktır. Fiyatların ve performans puanlarının şeffaf bir şekilde gösterilmesiyle de, en doğru hizmet sağlayıcıya erişimizi sağlayacaktır.',
+      'Kolay Garaj uygulaması, arabalarınıza, motorlarınıza veya taşıtlarınıza dair ihtiyaç duyulacak hizmetler için, kolayca teklif almanızı, teklif veren hizmet sağlayıcısının performans puanlarını görüntülemenizi ve teklifler arasından size en uygununu seçmenize olanak sağlamayı amaçlamaktadır. Uygulama kapsamında binlerce hizmet sağlayıcı, tek tıkla anında erişilebilir olacaktır. Fiyatların ve performans puanlarının şeffaf bir şekilde gösterilmesiyle de, en doğru hizmet sağlayıcıya erişimizi sağlayacaktır.',
   },
   {
     title: 'Üyelik şartları nedir ?',
     content:
-      'Üyelik için herhangi bir şartımız bulunmamakla birlikte, arabasını önemseyenlerin VAL-E ile tanışmasını bekliyoruz :)',
+      'Üyelik için herhangi bir şartımız bulunmamakla birlikte, arabasını önemseyenlerin Kolay Garaj ile tanışmasını bekliyoruz :)',
   },
   {
     title: 'Nasıl üye olurum ?',
     content:
-      'AppStore veya GoogleStore üzerinden indireceğiniz, Val-e uygulaması üzerinden, tanımlayıcı bilgilerinizi girerek üye olabilirsiniz. Üyelik işlemleri ve teklif süreçleri boyunca, hiçbir hizmet bedeli ödemeden, tekliflerin tadını çıkarabilirsiniz.',
+      'AppStore veya GoogleStore üzerinden indireceğiniz, Kolay Garaj uygulaması üzerinden, tanımlayıcı bilgilerinizi girerek üye olabilirsiniz. Üyelik işlemleri ve teklif süreçleri boyunca, hiçbir hizmet bedeli ödemeden, tekliflerin tadını çıkarabilirsiniz.',
   },
   {
     title: 'Bana Özel Hizmet/Kampanya Paketi nedir ?',

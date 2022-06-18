@@ -1557,7 +1557,7 @@ export class CommercialUsersList extends Component {
           });
         } else {
           Alert.alert(
-            'VAL-E',
+            'Kolay Garaj',
             'Aradığınız kriterlerde hizmet veren firma bulunmamaktadır.',
             [{text: 'Tamam', onPress: () => null}],
           );
@@ -1580,7 +1580,7 @@ export class CommercialUsersList extends Component {
     window.commercialsIdList = commercialList;
     window.commercialsIdFirmName = item.company_name;
 
-    Alert.alert('VAL-E', 'Talep İşlemleri', [
+    Alert.alert('Kolay Garaj', 'Talep İşlemleri', [
       {
         text: 'Geri',
         onPress: () => {},

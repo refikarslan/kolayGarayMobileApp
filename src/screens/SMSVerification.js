@@ -70,7 +70,7 @@ export class SMSVerification extends Component {
                 navigation.navigate('SignIn');
               } else {
                 Alert.alert(
-                  'VAL-E',
+                  'Kolay Garaj',
                   'Bir hata oldu, lütfen uygulamayı yeniden başlatınız.',
                   [{text: 'Tamam', onPress: () => null}],
                 );

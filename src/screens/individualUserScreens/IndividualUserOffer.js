@@ -282,15 +282,17 @@ export class IndividualUserOffer extends Component {
               spinner: !this.state.spinner,
             });
           } else {
-            Alert.alert('VAL-E', 'Henüz talebiniz için teklif verilmemiştir.', [
-              {text: 'Tamam', onPress: () => null},
-            ]);
+            Alert.alert(
+              'Kolay Garaj',
+              'Henüz talebiniz için teklif verilmemiştir.',
+              [{text: 'Tamam', onPress: () => null}],
+            );
             this.setState({
               spinner: !this.state.spinner,
             });
           }
         } else {
-          Alert.alert('VAL-E', 'Teklifler getirilemedi.', [
+          Alert.alert('Kolay Garaj', 'Teklifler getirilemedi.', [
             {text: 'Tamam', onPress: () => null},
           ]);
           this.setState({
@@ -358,7 +360,7 @@ export class IndividualUserOffer extends Component {
                       });
                     } else {
                       Alert.alert(
-                        'VAL-E',
+                        'Kolay Garaj',
                         'Daha önce bu hizmete puan verdiğiniz için tekrar puanlama işlemi yapamazsınız.',
                         [{text: 'Tamam', onPress: () => null}],
                       );
@@ -369,7 +371,7 @@ export class IndividualUserOffer extends Component {
                   }
                 } else {
                   Alert.alert(
-                    'VAL-E',
+                    'Kolay Garaj',
                     'Bir hata oldu, lütfen daha sonra tekrar deneyiniz.',
                     [{text: 'Tamam', onPress: () => null}],
                   );
@@ -386,7 +388,7 @@ export class IndividualUserOffer extends Component {
               });
           } else {
             Alert.alert(
-              'VAL-E',
+              'Kolay Garaj',
               'Bir hata oldu, lütfen daha sonra tekrar deneyiniz.',
               [{text: 'Tamam', onPress: () => null}],
             );
@@ -396,7 +398,7 @@ export class IndividualUserOffer extends Component {
           }
         } else {
           Alert.alert(
-            'VAL-E',
+            'Kolay Garaj',
             'Bir hata oldu, lütfen daha sonra tekrar deneyiniz.',
             [{text: 'Tamam', onPress: () => null}],
           );
@@ -709,87 +711,6 @@ export class IndividualUserOffer extends Component {
           </View>
         );
       }
-    } else if (item.category === 2) {
-      if (item.status === 1) {
-        return (
-          <View style={styles.list}>
-            <View
-              style={{
-                alignSelf: 'flex-end',
-                marginTop: 5,
-                position: 'absolute',
-              }}>
-              <Image
-                source={require('../../assets/images/iconPng/carWash.png')}
-                style={{
-                  width: 75,
-                  height: 75,
-                  opacity: 0.2,
-                }}
-              />
-            </View>
-            <TouchableOpacity
-              onPress={this.onClickRequestOfferReview.bind(this, item)}>
-              <View style={styles.listStyle}>
-                <View style={styles.listChildView_2}>
-                  <Text style={styles.itemText_Bold}>Araç Tipi</Text>
-                  <Text style={styles.itemText}>- {item.car_type}</Text>
-                  <Text style={styles.itemText_Bold}>Talep Tarihi</Text>
-                  <Text style={styles.itemText}>- {item.creation_date}</Text>
-                  <Text style={styles.itemText_Bold}>İl - İlçe</Text>
-                  <Text style={styles.itemText}>
-                    - {item.location_city + '/' + item.location_state}
-                  </Text>
-                  <Text style={styles.itemText_Bold}>Talep Detayı</Text>
-                  <Text style={styles.itemText}>- {item.description}</Text>
-                </View>
-                <View style={styles.listChildView_1_green}>
-                  <Text style={styles.itemButton_green}>HİZMETE PUAN VER </Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-          </View>
-        );
-      } else {
-        return (
-          <View style={styles.list}>
-            <View
-              style={{
-                alignSelf: 'flex-end',
-                marginTop: 5,
-                position: 'absolute',
-              }}>
-              <Image
-                source={require('../../assets/images/iconPng/carWash.png')}
-                style={{
-                  width: 75,
-                  height: 75,
-                  opacity: 0.2,
-                }}
-              />
-            </View>
-            <TouchableOpacity onPress={this.onClickRequest.bind(this, item)}>
-              <View style={styles.listStyle}>
-                <View style={styles.listChildView_2}>
-                  <Text style={styles.itemText_Bold}>Araç Tipi</Text>
-                  <Text style={styles.itemText}>- {item.car_type}</Text>
-                  <Text style={styles.itemText_Bold}>Talep Tarihi</Text>
-                  <Text style={styles.itemText}>- {item.creation_date}</Text>
-                  <Text style={styles.itemText_Bold}>İl - İlçe</Text>
-                  <Text style={styles.itemText}>
-                    - {item.location_city + '/' + item.location_state}
-                  </Text>
-                  <Text style={styles.itemText_Bold}>Talep Detayı</Text>
-                  <Text style={styles.itemText}>- {item.description}</Text>
-                </View>
-                <View style={styles.listChildView_1}>
-                  <Text style={styles.itemButton}> GELEN TEKLİFLER </Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-          </View>
-        );
-      }
     } else if (item.category === 3) {
       if (item.status === 1) {
         return (
@@ -923,249 +844,6 @@ export class IndividualUserOffer extends Component {
               }}>
               <Image
                 source={require('../../assets/images/iconPng/carService.png')}
-                style={{
-                  width: 75,
-                  height: 75,
-                  opacity: 0.2,
-                }}
-              />
-            </View>
-            <TouchableOpacity onPress={this.onClickRequest.bind(this, item)}>
-              <View style={styles.listStyle}>
-                <View style={styles.listChildView_2}>
-                  <Text style={styles.itemText_Bold}>Araç Tipi</Text>
-                  <Text style={styles.itemText}>- {item.car_type}</Text>
-                  <Text style={styles.itemText_Bold}>Talep Tarihi</Text>
-                  <Text style={styles.itemText}>- {item.creation_date}</Text>
-                  <Text style={styles.itemText_Bold}>İl - İlçe</Text>
-                  <Text style={styles.itemText}>
-                    - {item.location_city + '/' + item.location_state}
-                  </Text>
-                  <Text style={styles.itemText_Bold}>Talep Detayı</Text>
-                  <Text style={styles.itemText}>- {item.description}</Text>
-                </View>
-                <View style={styles.listChildView_1}>
-                  <Text style={styles.itemButton}> GELEN TEKLİFLER </Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-          </View>
-        );
-      }
-    } else if (item.category === 5) {
-      if (item.status === 1) {
-        return (
-          <View style={styles.list}>
-            <View
-              style={{
-                alignSelf: 'flex-end',
-                marginTop: 5,
-                position: 'absolute',
-              }}>
-              <Image
-                source={require('../../assets/images/iconPng/carBattery.png')}
-                style={{
-                  width: 75,
-                  height: 75,
-                  opacity: 0.2,
-                }}
-              />
-            </View>
-            <TouchableOpacity
-              onPress={this.onClickRequestOfferReview.bind(this, item)}>
-              <View style={styles.listStyle}>
-                <View style={styles.listChildView_2}>
-                  <Text style={styles.itemText_Bold}>Araç Tipi</Text>
-                  <Text style={styles.itemText}>- {item.car_type}</Text>
-                  <Text style={styles.itemText_Bold}>Talep Tarihi</Text>
-                  <Text style={styles.itemText}>- {item.creation_date}</Text>
-                  <Text style={styles.itemText_Bold}>İl - İlçe</Text>
-                  <Text style={styles.itemText}>
-                    - {item.location_city + '/' + item.location_state}
-                  </Text>
-                  <Text style={styles.itemText_Bold}>Talep Detayı</Text>
-                  <Text style={styles.itemText}>- {item.description}</Text>
-                </View>
-                <View style={styles.listChildView_1_green}>
-                  <Text style={styles.itemButton_green}>HİZMETE PUAN VER </Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-          </View>
-        );
-      } else {
-        return (
-          <View style={styles.list}>
-            <View
-              style={{
-                alignSelf: 'flex-end',
-                marginTop: 5,
-                position: 'absolute',
-              }}>
-              <Image
-                source={require('../../assets/images/iconPng/carBattery.png')}
-                style={{
-                  width: 75,
-                  height: 75,
-                  opacity: 0.2,
-                }}
-              />
-            </View>
-            <TouchableOpacity onPress={this.onClickRequest.bind(this, item)}>
-              <View style={styles.listStyle}>
-                <View style={styles.listChildView_2}>
-                  <Text style={styles.itemText_Bold}>Araç Tipi</Text>
-                  <Text style={styles.itemText}>- {item.car_type}</Text>
-                  <Text style={styles.itemText_Bold}>Talep Tarihi</Text>
-                  <Text style={styles.itemText}>- {item.creation_date}</Text>
-                  <Text style={styles.itemText_Bold}>İl - İlçe</Text>
-                  <Text style={styles.itemText}>
-                    - {item.location_city + '/' + item.location_state}
-                  </Text>
-                  <Text style={styles.itemText_Bold}>Talep Detayı</Text>
-                  <Text style={styles.itemText}>- {item.description}</Text>
-                </View>
-                <View style={styles.listChildView_1}>
-                  <Text style={styles.itemButton}> GELEN TEKLİFLER </Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-          </View>
-        );
-      }
-    } else if (item.category === 6) {
-      if (item.status === 1) {
-        return (
-          <View style={styles.list}>
-            <View
-              style={{
-                alignSelf: 'flex-end',
-                marginTop: 5,
-                position: 'absolute',
-              }}>
-              <Image
-                source={require('../../assets/images/iconPng/carKey.png')}
-                style={{
-                  width: 75,
-                  height: 75,
-                  opacity: 0.2,
-                }}
-              />
-            </View>
-            <TouchableOpacity
-              onPress={this.onClickRequestOfferReview.bind(this, item)}>
-              <View style={styles.listStyle}>
-                <View style={styles.listChildView_2}>
-                  <Text style={styles.itemText_Bold}>Araç Tipi</Text>
-                  <Text style={styles.itemText}>- {item.car_type}</Text>
-                  <Text style={styles.itemText_Bold}>Talep Tarihi</Text>
-                  <Text style={styles.itemText}>- {item.creation_date}</Text>
-                  <Text style={styles.itemText_Bold}>İl - İlçe</Text>
-                  <Text style={styles.itemText}>
-                    - {item.location_city + '/' + item.location_state}
-                  </Text>
-                  <Text style={styles.itemText_Bold}>Talep Detayı</Text>
-                  <Text style={styles.itemText}>- {item.description}</Text>
-                </View>
-                <View style={styles.listChildView_1_green}>
-                  <Text style={styles.itemButton_green}>HİZMETE PUAN VER </Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-          </View>
-        );
-      } else {
-        return (
-          <View style={styles.list}>
-            <View
-              style={{
-                alignSelf: 'flex-end',
-                marginTop: 5,
-                position: 'absolute',
-              }}>
-              <Image
-                source={require('../../assets/images/iconPng/carKey.png')}
-                style={{
-                  width: 75,
-                  height: 75,
-                  opacity: 0.2,
-                }}
-              />
-            </View>
-            <TouchableOpacity onPress={this.onClickRequest.bind(this, item)}>
-              <View style={styles.listStyle}>
-                <View style={styles.listChildView_2}>
-                  <Text style={styles.itemText_Bold}>Araç Tipi</Text>
-                  <Text style={styles.itemText}>- {item.car_type}</Text>
-                  <Text style={styles.itemText_Bold}>Talep Tarihi</Text>
-                  <Text style={styles.itemText}>- {item.creation_date}</Text>
-                  <Text style={styles.itemText_Bold}>İl - İlçe</Text>
-                  <Text style={styles.itemText}>
-                    - {item.location_city + '/' + item.location_state}
-                  </Text>
-                  <Text style={styles.itemText_Bold}>Talep Detayı</Text>
-                  <Text style={styles.itemText}>- {item.description}</Text>
-                </View>
-                <View style={styles.listChildView_1}>
-                  <Text style={styles.itemButton}> GELEN TEKLİFLER </Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-          </View>
-        );
-      }
-    } else if (item.category === 7) {
-      if (item.status === 1) {
-        return (
-          <View style={styles.list}>
-            <View
-              style={{
-                alignSelf: 'flex-end',
-                marginTop: 5,
-                position: 'absolute',
-              }}>
-              <Image
-                source={require('../../assets/images/iconPng/carParts.png')}
-                style={{
-                  width: 75,
-                  height: 75,
-                  opacity: 0.2,
-                }}
-              />
-            </View>
-            <TouchableOpacity
-              onPress={this.onClickRequestOfferReview.bind(this, item)}>
-              <View style={styles.listStyle}>
-                <View style={styles.listChildView_2}>
-                  <Text style={styles.itemText_Bold}>Araç Tipi</Text>
-                  <Text style={styles.itemText}>- {item.car_type}</Text>
-                  <Text style={styles.itemText_Bold}>Talep Tarihi</Text>
-                  <Text style={styles.itemText}>- {item.creation_date}</Text>
-                  <Text style={styles.itemText_Bold}>İl - İlçe</Text>
-                  <Text style={styles.itemText}>
-                    - {item.location_city + '/' + item.location_state}
-                  </Text>
-                  <Text style={styles.itemText_Bold}>Talep Detayı</Text>
-                  <Text style={styles.itemText}>- {item.description}</Text>
-                </View>
-                <View style={styles.listChildView_1_green}>
-                  <Text style={styles.itemButton_green}>HİZMETE PUAN VER </Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-          </View>
-        );
-      } else {
-        return (
-          <View style={styles.list}>
-            <View
-              style={{
-                alignSelf: 'flex-end',
-                marginTop: 5,
-                position: 'absolute',
-              }}>
-              <Image
-                source={require('../../assets/images/iconPng/carParts.png')}
                 style={{
                   width: 75,
                   height: 75,

@@ -65,7 +65,7 @@ export class IndividualUserGarageCars extends Component {
           navigation.navigate('Home');
         } else {
           Alert.alert(
-            'VAL-E',
+            'Kolay Garaj',
             'Bir hata oldu, lütfen uygulamayı yeniden başlatınız.',
             [{text: 'Tamam', onPress: () => null}],
           );
@@ -86,7 +86,7 @@ export class IndividualUserGarageCars extends Component {
   }
 
   contactFunc() {
-    Alert.alert('VAL-E Müşteri Hizmetleri Hattı', '0(312) 580 00 06', [
+    Alert.alert('Kolay Garaj Müşteri Hizmetleri Hattı', '0(312) 580 00 06', [
       {text: 'Tamam', onPress: () => null},
     ]);
   }
@@ -136,7 +136,7 @@ export class IndividualUserGarageCars extends Component {
               spinner: !this.state.spinner,
             });
           } else {
-            Alert.alert('VAL-E', 'Garajda kayıtlı aracınız bulunmamaktadır.', [
+            Alert.alert('Kolay Garaj', 'Garajda kayıtlı aracınız bulunmamaktadır.', [
               {text: 'Tamam', onPress: () => null},
             ]);
             this.setState({
@@ -172,7 +172,7 @@ export class IndividualUserGarageCars extends Component {
           <TouchableOpacity
             onPress={() => {
               Alert.alert(
-                'VAL-E',
+                'Kolay Garaj',
                 'Kayıtlı aracınızı düzenlemek istediğinizden emin misiniz ?',
                 [
                   {
@@ -202,7 +202,7 @@ export class IndividualUserGarageCars extends Component {
           <TouchableOpacity
             onPress={() => {
               Alert.alert(
-                'VAL-E',
+                'Kolay Garaj',
                 'Kayıtlı aracınızı silmek istediğinizden emin misiniz ?',
                 [
                   {
@@ -225,7 +225,7 @@ export class IndividualUserGarageCars extends Component {
                           console.log(res);
                           if (res.status !== 'fail') {
                             Alert.alert(
-                              'VAL-E',
+                              'Kolay Garaj',
                               'Araç başarıyla silinmiştir.',
                               [
                                 {
@@ -244,7 +244,7 @@ export class IndividualUserGarageCars extends Component {
                             );
                           } else {
                             Alert.alert(
-                              'VAL-E',
+                              'Kolay Garaj',
                               'Araç silme işlemi gerçekleştirilemedi.',
                               [{text: 'Tamam', onPress: () => null}],
                             );

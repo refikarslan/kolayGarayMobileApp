@@ -1980,7 +1980,7 @@ export class CarTireService extends Component {
                   </View>
                   <View style={styles.View4}>
                     <Text style={styles.textStandart}>
-                      Araç teslimat VAL-E hizmeti ister misiniz?
+                      Araç teslimat Kolay Garaj hizmeti ister misiniz?
                     </Text>
                     <SelectDropdown
                       data={carStateType}
@@ -2246,7 +2246,7 @@ export class CarTireService extends Component {
                   </View>
                   <View style={styles.View5_2}>
                     <Text style={styles.textStandart}>
-                      Araç teslimat VAL-E hizmeti ister misiniz?
+                      Araç teslimat Kolay Garaj hizmeti ister misiniz?
                     </Text>
                     <SelectDropdown
                       data={carStateType}

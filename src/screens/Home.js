@@ -99,7 +99,7 @@ export class Home extends Component {
                   this.autoLoginServiceHome();
                 } else {
                   Alert.alert(
-                    'VAL-E',
+                    'Kolay Garaj',
                     'Bir hata oldu, lütfen uygulamayı yeniden başlatınız.',
                     [{text: 'Tamam', onPress: () => null}],
                   );
@@ -175,7 +175,7 @@ export class Home extends Component {
                         navigation.navigate('SignIn');
                       } else {
                         Alert.alert(
-                          'VAL-E',
+                          'Kolay Garaj',
                           'Bir hata oldu, lütfen uygulamayı yeniden başlatınız.',
                           [{text: 'Tamam', onPress: () => null}],
                         );

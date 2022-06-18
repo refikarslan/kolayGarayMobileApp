@@ -86,16 +86,20 @@ export class CommercialUserOffer extends Component {
               spinner: !this.state.spinner,
             });
           } else {
-            Alert.alert('VAL-E', 'Oluşturulmuş teklifiniz bulunmamaktadır.', [
-              {
-                text: 'Tamam',
-                onPress: () => {
-                  this.setState({
-                    spinner: !this.state.spinner,
-                  });
+            Alert.alert(
+              'Kolay Garaj',
+              'Oluşturulmuş teklifiniz bulunmamaktadır.',
+              [
+                {
+                  text: 'Tamam',
+                  onPress: () => {
+                    this.setState({
+                      spinner: !this.state.spinner,
+                    });
+                  },
                 },
-              },
-            ]);
+              ],
+            );
           }
         })
         .catch(e => {
@@ -110,49 +114,53 @@ export class CommercialUserOffer extends Component {
   onClickProduct(item) {
     let id = item.id;
     window.selected_request = item;
-    Alert.alert('VAL-E', 'Teklifinizi silmek istediğinizden emin misiniz?', [
-      {text: 'Hayır', onPress: () => null},
-      {
-        text: 'Evet',
-        onPress: () => {
-          fetch(CONSTANT.baseUrl + 'offer/' + id, {
-            method: 'DELETE',
-            dataType: 'json',
-            headers: {
-              Accept: 'application/json',
-              'Content-Type': 'application/json',
-            },
-          })
-            .then(response => response.json())
-            .then(res => {
-              console.log(res);
-              if (res.status !== 'fail') {
-                Alert.alert('VAL-E', 'Teklif başarıyla silinmiştir.', [
-                  {
-                    text: 'Tamam',
-                    onPress: () => {
-                      const {navigation} = this.props;
-                      navigation.reset({
-                        index: 0,
-                        routes: [{name: 'CommercialUserOfferScreen'}],
-                      });
-                    },
-                  },
-                ]);
-              } else {
-                Alert.alert(
-                  'VAL-E',
-                  'Teklif silme işlemi gerçekleştirilemedi.',
-                  [{text: 'Tamam', onPress: () => null}],
-                );
-              }
+    Alert.alert(
+      'Kolay Garaj',
+      'Teklifinizi silmek istediğinizden emin misiniz?',
+      [
+        {text: 'Hayır', onPress: () => null},
+        {
+          text: 'Evet',
+          onPress: () => {
+            fetch(CONSTANT.baseUrl + 'offer/' + id, {
+              method: 'DELETE',
+              dataType: 'json',
+              headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+              },
             })
-            .catch(e => {
-              console.log(e);
-            });
+              .then(response => response.json())
+              .then(res => {
+                console.log(res);
+                if (res.status !== 'fail') {
+                  Alert.alert('Kolay Garaj', 'Teklif başarıyla silinmiştir.', [
+                    {
+                      text: 'Tamam',
+                      onPress: () => {
+                        const {navigation} = this.props;
+                        navigation.reset({
+                          index: 0,
+                          routes: [{name: 'CommercialUserOfferScreen'}],
+                        });
+                      },
+                    },
+                  ]);
+                } else {
+                  Alert.alert(
+                    'Kolay Garaj',
+                    'Teklif silme işlemi gerçekleştirilemedi.',
+                    [{text: 'Tamam', onPress: () => null}],
+                  );
+                }
+              })
+              .catch(e => {
+                console.log(e);
+              });
+          },
         },
-      },
-    ]);
+      ],
+    );
   }
 
   renderMyOffer = ({item, index}) => {
@@ -196,50 +204,6 @@ export class CommercialUserOffer extends Component {
             </View>
             <Image
               source={require('../../assets/images/iconPng/carTire.png')}
-              style={{
-                width: 75,
-                height: 75,
-                opacity: 0.5,
-              }}
-            />
-          </View>
-        </View>
-      );
-    } else if (commercialCategoryId === 2) {
-      return (
-        <View style={styles.list}>
-          <View
-            style={{
-              alignSelf: 'flex-end',
-              marginTop: 5,
-            }}>
-            <TouchableOpacity onPress={this.onClickProduct.bind(this, item)}>
-              <Image
-                source={require('../../assets/images/delete.png')}
-                style={{
-                  width: 25,
-                  height: 25,
-                }}
-              />
-            </TouchableOpacity>
-          </View>
-          <View style={styles.listStyle}>
-            <View style={styles.listChildView_2}>
-              <Text style={styles.itemText_Bold}>İl-İlçe</Text>
-              <Text style={styles.itemText}>
-                {item.request.location_city + '-' + item.request.location_state}
-              </Text>
-              <Text style={styles.itemText_Bold}>Talep Detayı</Text>
-              <Text style={styles.itemText}>{item.request.description}</Text>
-
-              <Text style={styles.itemText_Bold}>Teklif Detayı</Text>
-              <Text style={styles.itemText}>{item.description}</Text>
-
-              <Text style={styles.itemText_Bold}>Teklif Tutarı</Text>
-              <Text style={styles.itemText}>{item.price + ' ₺'}</Text>
-            </View>
-            <Image
-              source={require('../../assets/images/iconPng/carWash.png')}
               style={{
                 width: 75,
                 height: 75,
@@ -328,138 +292,6 @@ export class CommercialUserOffer extends Component {
             </View>
             <Image
               source={require('../../assets/images/iconPng/carService.png')}
-              style={{
-                width: 75,
-                height: 75,
-                opacity: 0.5,
-              }}
-            />
-          </View>
-        </View>
-      );
-    } else if (commercialCategoryId === 5) {
-      return (
-        <View style={styles.list}>
-          <View
-            style={{
-              alignSelf: 'flex-end',
-              marginTop: 5,
-            }}>
-            <TouchableOpacity onPress={this.onClickProduct.bind(this, item)}>
-              <Image
-                source={require('../../assets/images/delete.png')}
-                style={{
-                  width: 25,
-                  height: 25,
-                }}
-              />
-            </TouchableOpacity>
-          </View>
-          <View style={styles.listStyle}>
-            <View style={styles.listChildView_2}>
-              <Text style={styles.itemText_Bold}>İl-İlçe</Text>
-              <Text style={styles.itemText}>
-                {item.request.location_city + '-' + item.request.location_state}
-              </Text>
-              <Text style={styles.itemText_Bold}>Talep Detayı</Text>
-              <Text style={styles.itemText}>{item.request.description}</Text>
-
-              <Text style={styles.itemText_Bold}>Teklif Detayı</Text>
-              <Text style={styles.itemText}>{item.description}</Text>
-
-              <Text style={styles.itemText_Bold}>Teklif Tutarı</Text>
-              <Text style={styles.itemText}>{item.price + ' ₺'}</Text>
-            </View>
-            <Image
-              source={require('../../assets/images/iconPng/carBattery.png')}
-              style={{
-                width: 75,
-                height: 75,
-                opacity: 0.5,
-              }}
-            />
-          </View>
-        </View>
-      );
-    } else if (commercialCategoryId === 6) {
-      return (
-        <View style={styles.list}>
-          <View
-            style={{
-              alignSelf: 'flex-end',
-              marginTop: 5,
-            }}>
-            <TouchableOpacity onPress={this.onClickProduct.bind(this, item)}>
-              <Image
-                source={require('../../assets/images/delete.png')}
-                style={{
-                  width: 25,
-                  height: 25,
-                }}
-              />
-            </TouchableOpacity>
-          </View>
-          <View style={styles.listStyle}>
-            <View style={styles.listChildView_2}>
-              <Text style={styles.itemText_Bold}>İl-İlçe</Text>
-              <Text style={styles.itemText}>
-                {item.request.location_city + '-' + item.request.location_state}
-              </Text>
-              <Text style={styles.itemText_Bold}>Talep Detayı</Text>
-              <Text style={styles.itemText}>{item.request.description}</Text>
-
-              <Text style={styles.itemText_Bold}>Teklif Detayı</Text>
-              <Text style={styles.itemText}>{item.description}</Text>
-
-              <Text style={styles.itemText_Bold}>Teklif Tutarı</Text>
-              <Text style={styles.itemText}>{item.price + ' ₺'}</Text>
-            </View>
-            <Image
-              source={require('../../assets/images/iconPng/carKey.png')}
-              style={{
-                width: 75,
-                height: 75,
-                opacity: 0.5,
-              }}
-            />
-          </View>
-        </View>
-      );
-    } else if (commercialCategoryId === 7) {
-      return (
-        <View style={styles.list}>
-          <View
-            style={{
-              alignSelf: 'flex-end',
-              marginTop: 5,
-            }}>
-            <TouchableOpacity onPress={this.onClickProduct.bind(this, item)}>
-              <Image
-                source={require('../../assets/images/delete.png')}
-                style={{
-                  width: 25,
-                  height: 25,
-                }}
-              />
-            </TouchableOpacity>
-          </View>
-          <View style={styles.listStyle}>
-            <View style={styles.listChildView_2}>
-              <Text style={styles.itemText_Bold}>İl-İlçe</Text>
-              <Text style={styles.itemText}>
-                {item.request.location_city + '-' + item.request.location_state}
-              </Text>
-              <Text style={styles.itemText_Bold}>Talep Detayı</Text>
-              <Text style={styles.itemText}>{item.request.description}</Text>
-
-              <Text style={styles.itemText_Bold}>Teklif Detayı</Text>
-              <Text style={styles.itemText}>{item.description}</Text>
-
-              <Text style={styles.itemText_Bold}>Teklif Tutarı</Text>
-              <Text style={styles.itemText}>{item.price + ' ₺'}</Text>
-            </View>
-            <Image
-              source={require('../../assets/images/iconPng/carParts.png')}
               style={{
                 width: 75,
                 height: 75,

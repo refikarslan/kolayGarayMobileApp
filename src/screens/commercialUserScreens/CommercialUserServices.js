@@ -58,7 +58,7 @@ export class CommercialUserServices extends Component {
           navigation.navigate('Home');
         } else {
           Alert.alert(
-            'VAL-E',
+            'Kolay Garaj',
             'Bir hata oldu, lütfen uygulamayı yeniden başlatınız.',
             [{text: 'Tamam', onPress: () => null}],
           );
@@ -142,7 +142,7 @@ export class CommercialUserServices extends Component {
                   });
                 } else {
                   Alert.alert(
-                    'VAL-E',
+                    'Kolay Garaj',
                     'Kayıtlı hizmet/kampanya paketiniz bulunmamaktadır.',
                     [{text: 'Tamam', onPress: () => null}],
                   );
@@ -158,7 +158,7 @@ export class CommercialUserServices extends Component {
                 });
               });
           } else {
-            Alert.alert('VAL-E', 'Session bulunmamaktadır.', [
+            Alert.alert('Kolay Garaj', 'Session bulunmamaktadır.', [
               {text: 'Tamam', onPress: () => null},
             ]);
             this.setState({
@@ -192,7 +192,7 @@ export class CommercialUserServices extends Component {
           <TouchableOpacity
             onPress={() => {
               Alert.alert(
-                'VAL-E',
+                'Kolay Garaj',
                 'Kayıtlı hizmet/kampanya paketinizi silmek istediğinizden emin misiniz ?',
                 [
                   {text: 'Hayır', onPress: () => null},
@@ -215,7 +215,7 @@ export class CommercialUserServices extends Component {
                           console.log(res);
                           if (res.status !== 'fail') {
                             Alert.alert(
-                              'VAL-E',
+                              'Kolay Garaj',
                               'Kayıtlı hizmet/kampanya paketi başarıyla silinmiştir.',
                               [
                                 {
@@ -234,7 +234,7 @@ export class CommercialUserServices extends Component {
                             );
                           } else {
                             Alert.alert(
-                              'VAL-E',
+                              'Kolay Garaj',
                               'Kayıtlı hizmet/kampanya paketi silme işlemi gerçekleştirilemedi.',
                               [{text: 'Tamam', onPress: () => null}],
                             );

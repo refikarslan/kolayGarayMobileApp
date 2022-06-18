@@ -1501,28 +1501,12 @@ const companyCategory = [
     value: 3,
   },
   {
-    label: 'OTO YIKAMA-KUAFÖR',
-    value: 2,
-  },
-  {
     label: 'OTO JANT-LASTİK',
     value: 1,
   },
   {
     label: 'OTO SERVİS-BAKIM',
     value: 4,
-  },
-  {
-    label: 'OTO AKÜ',
-    value: 5,
-  },
-  {
-    label: 'OTO ANAHTAR',
-    value: 6,
-  },
-  {
-    label: 'OTO YEDEK PARÇA',
-    value: 7,
   },
 ];
 
@@ -2010,7 +1994,7 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 5,
     alignItems: 'center',
-    marginBottom: 48 * 8,
+    marginBottom: 48 * 3,
   },
   View2: {
     flex: 1,

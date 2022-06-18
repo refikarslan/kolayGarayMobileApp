@@ -65,7 +65,7 @@ export class IndividualServiceRequestManagement extends Component {
             });
           } else {
             Alert.alert(
-              'VAL-E',
+              'Kolay Garaj',
               'Oluşturulmuş hizmet talebiniz bulunmamaktadır.',
               [{text: 'Tamam', onPress: () => null}],
             );
@@ -90,63 +90,67 @@ export class IndividualServiceRequestManagement extends Component {
   onClickProduct(item) {
     let id = item.id;
     window.selected_request = item;
-    Alert.alert('VAL-E', 'Talebinizi silmek istediğinizden emin misiniz?', [
-      {text: 'Hayır', onPress: () => null},
-      {
-        text: 'Evet',
-        onPress: () => {
-          this.setState({
-            spinner: !this.state.spinner,
-          });
-          fetch(CONSTANT.baseUrl + 'request/' + id, {
-            method: 'DELETE',
-            dataType: 'json',
-            headers: {
-              Accept: 'application/json',
-              'Content-Type': 'application/json',
-            },
-          })
-            .then(response => response.json())
-            .then(res => {
-              console.log(res);
-              if (res.status !== 'fail') {
-                Alert.alert('VAL-E', 'Talep başarıyla silinmiştir.', [
-                  {
-                    text: 'Tamam',
-                    onPress: () => {
-                      const {navigation} = this.props;
-                      navigation.reset({
-                        index: 0,
-                        routes: [
-                          {name: 'IndividualServiceRequestManagementScreen'},
-                        ],
-                      });
-                    },
-                  },
-                ]);
-                this.setState({
-                  spinner: !this.state.spinner,
-                });
-              } else {
-                Alert.alert(
-                  'VAL-E',
-                  'Talep silme işlemi gerçekleştirilemedi.',
-                  [{text: 'Tamam', onPress: () => null}],
-                );
-                this.setState({
-                  spinner: !this.state.spinner,
-                });
-              }
-            })
-            .catch(e => {
-              this.setState({
-                spinner: !this.state.spinner,
-              });
-              console.log(e);
+    Alert.alert(
+      'Kolay Garaj',
+      'Talebinizi silmek istediğinizden emin misiniz?',
+      [
+        {text: 'Hayır', onPress: () => null},
+        {
+          text: 'Evet',
+          onPress: () => {
+            this.setState({
+              spinner: !this.state.spinner,
             });
+            fetch(CONSTANT.baseUrl + 'request/' + id, {
+              method: 'DELETE',
+              dataType: 'json',
+              headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+              },
+            })
+              .then(response => response.json())
+              .then(res => {
+                console.log(res);
+                if (res.status !== 'fail') {
+                  Alert.alert('Kolay Garaj', 'Talep başarıyla silinmiştir.', [
+                    {
+                      text: 'Tamam',
+                      onPress: () => {
+                        const {navigation} = this.props;
+                        navigation.reset({
+                          index: 0,
+                          routes: [
+                            {name: 'IndividualServiceRequestManagementScreen'},
+                          ],
+                        });
+                      },
+                    },
+                  ]);
+                  this.setState({
+                    spinner: !this.state.spinner,
+                  });
+                } else {
+                  Alert.alert(
+                    'Kolay Garaj',
+                    'Talep silme işlemi gerçekleştirilemedi.',
+                    [{text: 'Tamam', onPress: () => null}],
+                  );
+                  this.setState({
+                    spinner: !this.state.spinner,
+                  });
+                }
+              })
+              .catch(e => {
+                this.setState({
+                  spinner: !this.state.spinner,
+                });
+                console.log(e);
+              });
+          },
         },
-      },
-    ]);
+      ],
+    );
   }
 
   renderMyRequest = ({item, index}) => {
@@ -185,53 +189,6 @@ export class IndividualServiceRequestManagement extends Component {
               <View style={styles.listChildView_2}>
                 <Image
                   source={require('../../assets/images/iconPng/carTire.png')}
-                  style={{
-                    width: 100,
-                    height: 100,
-                    position: 'absolute',
-                    opacity: 0.5,
-                  }}
-                />
-              </View>
-            </View>
-          </View>
-        </View>
-      );
-    } else if (item.category === 2) {
-      return (
-        <View style={styles.list}>
-          <View
-            style={{
-              alignSelf: 'flex-end',
-              marginTop: 5,
-            }}>
-            <TouchableOpacity onPress={this.onClickProduct.bind(this, item)}>
-              <Image
-                source={require('../../assets/images/delete.png')}
-                style={{
-                  width: 25,
-                  height: 25,
-                }}
-              />
-            </TouchableOpacity>
-          </View>
-          <View style={styles.listStyle}>
-            <View style={styles.listChildView_1}>
-              <Text style={styles.itemText_Bold}>Araç Tipi</Text>
-              <Text style={styles.itemText}>- {item.car_type}</Text>
-              <Text style={styles.itemText_Bold}>Talep Tarihi</Text>
-              <Text style={styles.itemText}>- {item.creation_date}</Text>
-              <Text style={styles.itemText_Bold}>İl - İlçe</Text>
-              <Text style={styles.itemText}>
-                - {item.location_city + '/' + item.location_state}
-              </Text>
-              <Text style={styles.itemText_Bold}>Talep Detayı</Text>
-              <Text style={styles.itemText}>- {item.description}</Text>
-            </View>
-            <View>
-              <View style={styles.listChildView_2}>
-                <Image
-                  source={require('../../assets/images/iconPng/carWash.png')}
                   style={{
                     width: 100,
                     height: 100,
@@ -326,147 +283,6 @@ export class IndividualServiceRequestManagement extends Component {
               <View style={styles.listChildView_2}>
                 <Image
                   source={require('../../assets/images/iconPng/carService.png')}
-                  style={{
-                    width: 100,
-                    height: 100,
-                    position: 'absolute',
-                    opacity: 0.5,
-                  }}
-                />
-              </View>
-            </View>
-          </View>
-        </View>
-      );
-    } else if (item.category === 5) {
-      return (
-        <View style={styles.list}>
-          <View
-            style={{
-              alignSelf: 'flex-end',
-              marginTop: 5,
-            }}>
-            <TouchableOpacity onPress={this.onClickProduct.bind(this, item)}>
-              <Image
-                source={require('../../assets/images/delete.png')}
-                style={{
-                  width: 25,
-                  height: 25,
-                }}
-              />
-            </TouchableOpacity>
-          </View>
-          <View style={styles.listStyle}>
-            <View style={styles.listChildView_1}>
-              <Text style={styles.itemText_Bold}>Araç Tipi</Text>
-              <Text style={styles.itemText}>- {item.car_type}</Text>
-              <Text style={styles.itemText_Bold}>Talep Tarihi</Text>
-              <Text style={styles.itemText}>- {item.creation_date}</Text>
-              <Text style={styles.itemText_Bold}>İl - İlçe</Text>
-              <Text style={styles.itemText}>
-                - {item.location_city + '/' + item.location_state}
-              </Text>
-              <Text style={styles.itemText_Bold}>Talep Detayı</Text>
-              <Text style={styles.itemText}>- {item.description}</Text>
-            </View>
-            <View>
-              <View style={styles.listChildView_2}>
-                <Image
-                  source={require('../../assets/images/iconPng/carBattery.png')}
-                  style={{
-                    width: 100,
-                    height: 100,
-                    position: 'absolute',
-                    opacity: 0.5,
-                  }}
-                />
-              </View>
-            </View>
-          </View>
-        </View>
-      );
-    }else if (item.category === 6) {
-      return (
-        <View style={styles.list}>
-          <View
-            style={{
-              alignSelf: 'flex-end',
-              marginTop: 5,
-            }}>
-            <TouchableOpacity onPress={this.onClickProduct.bind(this, item)}>
-              <Image
-                source={require('../../assets/images/delete.png')}
-                style={{
-                  width: 25,
-                  height: 25,
-                }}
-              />
-            </TouchableOpacity>
-          </View>
-          <View style={styles.listStyle}>
-            <View style={styles.listChildView_1}>
-              <Text style={styles.itemText_Bold}>Araç Tipi</Text>
-              <Text style={styles.itemText}>- {item.car_type}</Text>
-              <Text style={styles.itemText_Bold}>Talep Tarihi</Text>
-              <Text style={styles.itemText}>- {item.creation_date}</Text>
-              <Text style={styles.itemText_Bold}>İl - İlçe</Text>
-              <Text style={styles.itemText}>
-                - {item.location_city + '/' + item.location_state}
-              </Text>
-              <Text style={styles.itemText_Bold}>Talep Detayı</Text>
-              <Text style={styles.itemText}>- {item.description}</Text>
-            </View>
-            <View>
-              <View style={styles.listChildView_2}>
-                <Image
-                  source={require('../../assets/images/iconPng/carKey.png')}
-                  style={{
-                    width: 100,
-                    height: 100,
-                    position: 'absolute',
-                    opacity: 0.5,
-                  }}
-                />
-              </View>
-            </View>
-          </View>
-        </View>
-      );
-    }else if (item.category === 7) {
-      return (
-        <View style={styles.list}>
-          <View
-            style={{
-              alignSelf: 'flex-end',
-              marginTop: 5,
-            }}>
-            <TouchableOpacity onPress={this.onClickProduct.bind(this, item)}>
-              <Image
-                source={require('../../assets/images/delete.png')}
-                style={{
-                  width: 25,
-                  height: 25,
-                }}
-              />
-            </TouchableOpacity>
-          </View>
-          <View style={styles.listStyle}>
-            <View style={styles.listChildView_1}>
-              <Text style={styles.itemText_Bold}>Araç Tipi</Text>
-              <Text style={styles.itemText}>- {item.car_type}</Text>
-              <Text style={styles.itemText_Bold}>Talep Tarihi</Text>
-              <Text style={styles.itemText}>- {item.creation_date}</Text>
-              <Text style={styles.itemText_Bold}>İl - İlçe</Text>
-              <Text style={styles.itemText}>
-                - {item.location_city + '/' + item.location_state}
-              </Text>
-              <Text style={styles.itemText_Bold}>Talep Detayı</Text>
-              <Text style={styles.itemText}>- {item.description}</Text>
-            </View>
-            <View>
-              <View style={styles.listChildView_2}>
-                <Image
-                  source={require('../../assets/images/iconPng/carParts.png')}
                   style={{
                     width: 100,
                     height: 100,

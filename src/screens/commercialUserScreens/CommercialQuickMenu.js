@@ -110,12 +110,12 @@ export class CommercialQuickMenu extends Component {
       navigation.navigate('CommercialUserOfferScreen');
     } else if (item.id === 3) {
       Alert.alert(
-        'VAL-E',
+        'Kolay Garaj',
         'Hizmet talep edenler ile uygulama içi mesajlaşma çok yakında hizmetinizde.',
         [{text: 'Tamam', onPress: () => null}],
       );
     } else if (item.id === 4) {
-      Alert.alert('VAL-E Müşteri Hizmetleri Hattı', '0(312) 580 00 06', [
+      Alert.alert('Kolay Garaj Müşteri Hizmetleri Hattı', '0(312) 580 00 06', [
         {text: 'Tamam', onPress: () => null},
       ]);
     } else if (item.id === 5) {
@@ -142,7 +142,7 @@ export class CommercialQuickMenu extends Component {
             navigation.navigate('Home');
           } else {
             Alert.alert(
-              'VAL-E',
+              'Kolay Garaj',
               'Bir hata oldu, lütfen uygulamayı yeniden başlatınız.',
               [{text: 'Tamam', onPress: () => null}],
             );
@@ -155,7 +155,7 @@ export class CommercialQuickMenu extends Component {
   }
 
   onClickToken() {
-    Linking.openURL('https://val-e.app/jeton.html');
+    Linking.openURL('https://kolaygaraj.com');
   }
   onClickToken_ios() {}
 

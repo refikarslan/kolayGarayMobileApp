@@ -67,7 +67,7 @@ export class MyGarageCarList extends Component {
               spinner: !this.state.spinner,
             });
           } else {
-            Alert.alert('VAL-E', 'Garajda kayıtlı aracınız bulunmamaktadır.', [
+            Alert.alert('Kolay Garaj', 'Garajda kayıtlı aracınız bulunmamaktadır.', [
               {text: 'Tamam', onPress: () => null},
             ]);
             this.setState({
@@ -93,7 +93,7 @@ export class MyGarageCarList extends Component {
     window.selectedCarIdList = item;
     window.selectedCarName = item.name;
 
-    Alert.alert('VAL-E', 'Talep İşlemleri', [
+    Alert.alert('Kolay Garaj', 'Talep İşlemleri', [
       {
         text: 'Geri',
         onPress: () => {},

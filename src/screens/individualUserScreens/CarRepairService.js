@@ -1697,7 +1697,7 @@ export class CarRepairService extends Component {
                             });
                           } else {
                             Alert.alert(
-                              'VAL-E',
+                              'Kolay Garaj',
                               'Araç model detayları getirelemedi.',
                               [{text: 'Tamam', onPress: () => null}],
                             );
@@ -1709,7 +1709,7 @@ export class CarRepairService extends Component {
                     }
                   });
                 } else {
-                  Alert.alert('VAL-E', 'Araç modelleri getirelemedi.', [
+                  Alert.alert('Kolay Garaj', 'Araç modelleri getirelemedi.', [
                     {text: 'Tamam', onPress: () => null},
                   ]);
                 }
@@ -1743,7 +1743,7 @@ export class CarRepairService extends Component {
               brand_list: carBrandList,
             });
           } else {
-            Alert.alert('VAL-E', 'Araç markaları getirelemedi.', [
+            Alert.alert('Kolay Garaj', 'Araç markaları getirelemedi.', [
               {text: 'Tamam', onPress: () => null},
             ]);
             this.setState({
@@ -1891,7 +1891,7 @@ export class CarRepairService extends Component {
                 brandModel_list: carBrandModelList,
               });
             } else {
-              Alert.alert('VAL-E', 'Araç modelleri getirelemedi.', [
+              Alert.alert('Kolay Garaj', 'Araç modelleri getirelemedi.', [
                 {text: 'Tamam', onPress: () => null},
               ]);
             }
@@ -1926,7 +1926,7 @@ export class CarRepairService extends Component {
                 brandModelPack_list: carBrandModelPackList,
               });
             } else {
-              Alert.alert('VAL-E', 'Araç model detayları getirelemedi.', [
+              Alert.alert('Kolay Garaj', 'Araç model detayları getirelemedi.', [
                 {text: 'Tamam', onPress: () => null},
               ]);
             }

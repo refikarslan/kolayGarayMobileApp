@@ -38,7 +38,6 @@ import {CommercialQuickMenu} from './src/screens/commercialUserScreens/Commercia
 
 import {CarTowService} from './src/screens/individualUserScreens/CarTowService';
 import {CarTireService} from './src/screens/individualUserScreens/CarTireService';
-import {CarWashService} from './src/screens/individualUserScreens/CarWashService';
 import {CarRepairService} from './src/screens/individualUserScreens/CarRepairService';
 import {CommercialUsersList} from './src/screens/individualUserScreens/CommercialUsersList';
 import {MyGarageCarList} from './src/screens/individualUserScreens/MyGarageCarList';
@@ -55,9 +54,6 @@ import {IndividualUserGarageCars} from './src/screens/individualUserScreens/Indi
 import {IndividualUserGarageAddCars} from './src/screens/individualUserScreens/IndividualUserGarageAddCars';
 import {CommercialUserAddServices} from './src/screens/commercialUserScreens/CommercialUserAddServices';
 import {CommercialUserServices} from './src/screens/commercialUserScreens/CommercialUserServices';
-import {CarBatteryService} from './src/screens/individualUserScreens/CarBatteryService';
-import {CarKeyService} from './src/screens/individualUserScreens/CarKeyService';
-import {CarPartsService} from './src/screens/individualUserScreens/CarPartsService';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -74,19 +70,6 @@ function LogoTitle() {
         resizeMode: 'contain',
       }}
       source={require('./src/assets/images/logoHeader-M.png')}
-    />
-  );
-}
-
-function LogoTitleWhite() {
-  return (
-    <Image
-      style={{
-        width: 210,
-        height: 40,
-        marginBottom: Platform.OS === 'ios' ? 10 : 0,
-      }}
-      source={require('./src/assets/images/logoHeader.png')}
     />
   );
 }
@@ -309,57 +292,6 @@ function CarTireServicePage({navigation}) {
   );
 }
 
-function CarWashServicePage({navigation}) {
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: true,
-      }}>
-      <Stack.Screen
-        name="CarWashServiceScreen"
-        component={CarWashService}
-        options={{
-          headerTitle: props => (
-            <Text style={styles.headText} {...props}>
-              Oto Yıkama / Kuaför
-            </Text>
-          ),
-          headerLeft:
-            Platform.OS === 'ios'
-              ? props => (
-                  <TouchableOpacity onPress={() => navigation.goBack()}>
-                    <MaterialCommunityIconsIcon
-                      name="arrow-left"
-                      style={styles.icon}
-                    />
-                  </TouchableOpacity>
-                )
-              : null,
-          headerRight: props => (
-            <Image
-              source={require('./src/assets/images/iconPng/carWash.png')}
-              style={{
-                width: 25,
-                height: 25,
-              }}
-            />
-          ),
-
-          headerStyle: {
-            backgroundColor: '#ffffff',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-          headerTitleAlign: 'center',
-          headerBackTitleVisible: false,
-        }}
-      />
-    </Stack.Navigator>
-  );
-}
-
 function CarRepairServicePage({navigation}) {
   return (
     <Stack.Navigator
@@ -389,159 +321,6 @@ function CarRepairServicePage({navigation}) {
           headerRight: props => (
             <Image
               source={require('./src/assets/images/iconPng/carService.png')}
-              style={{
-                width: 25,
-                height: 25,
-              }}
-            />
-          ),
-
-          headerStyle: {
-            backgroundColor: '#ffffff',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-          headerTitleAlign: 'center',
-          headerBackTitleVisible: false,
-        }}
-      />
-    </Stack.Navigator>
-  );
-}
-
-function CarBatteryServicePage({navigation}) {
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: true,
-      }}>
-      <Stack.Screen
-        name="CarBatteryServiceScreen"
-        component={CarBatteryService}
-        options={{
-          headerTitle: props => (
-            <Text style={styles.headText} {...props}>
-              Oto Akü
-            </Text>
-          ),
-          headerLeft:
-            Platform.OS === 'ios'
-              ? props => (
-                  <TouchableOpacity onPress={() => navigation.goBack()}>
-                    <MaterialCommunityIconsIcon
-                      name="arrow-left"
-                      style={styles.icon}
-                    />
-                  </TouchableOpacity>
-                )
-              : null,
-          headerRight: props => (
-            <Image
-              source={require('./src/assets/images/iconPng/carBattery.png')}
-              style={{
-                width: 25,
-                height: 25,
-              }}
-            />
-          ),
-
-          headerStyle: {
-            backgroundColor: '#ffffff',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-          headerTitleAlign: 'center',
-          headerBackTitleVisible: false,
-        }}
-      />
-    </Stack.Navigator>
-  );
-}
-
-function CarKeyServicePage({navigation}) {
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: true,
-      }}>
-      <Stack.Screen
-        name="CarKeyServiceScreen"
-        component={CarKeyService}
-        options={{
-          headerTitle: props => (
-            <Text style={styles.headText} {...props}>
-              Oto Anahtar Çilingir
-            </Text>
-          ),
-          headerLeft:
-            Platform.OS === 'ios'
-              ? props => (
-                  <TouchableOpacity onPress={() => navigation.goBack()}>
-                    <MaterialCommunityIconsIcon
-                      name="arrow-left"
-                      style={styles.icon}
-                    />
-                  </TouchableOpacity>
-                )
-              : null,
-          headerRight: props => (
-            <Image
-              source={require('./src/assets/images/iconPng/carKey.png')}
-              style={{
-                width: 25,
-                height: 25,
-              }}
-            />
-          ),
-
-          headerStyle: {
-            backgroundColor: '#ffffff',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-          headerTitleAlign: 'center',
-          headerBackTitleVisible: false,
-        }}
-      />
-    </Stack.Navigator>
-  );
-}
-
-function CarPartsServicePage({navigation}) {
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: true,
-      }}>
-      <Stack.Screen
-        name="CarPartsServiceScreen"
-        component={CarPartsService}
-        options={{
-          headerTitle: props => (
-            <Text style={styles.headText} {...props}>
-              Oto Yedek Parça
-            </Text>
-          ),
-          headerLeft:
-            Platform.OS === 'ios'
-              ? props => (
-                  <TouchableOpacity onPress={() => navigation.goBack()}>
-                    <MaterialCommunityIconsIcon
-                      name="arrow-left"
-                      style={styles.icon}
-                    />
-                  </TouchableOpacity>
-                )
-              : null,
-          headerRight: props => (
-            <Image
-              source={require('./src/assets/images/iconPng/carParts.png')}
               style={{
                 width: 25,
                 height: 25,
@@ -1189,8 +968,8 @@ function TabMenuScreenIndividual({navigation}) {
                   <TouchableOpacity
                     onPress={() => {
                       Alert.alert(
-                        'VAL-E',
-                        'Çok yakında VAL-E ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
+                        'Kolay Garaj',
+                        'Çok yakında Kolay Garaj ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
                         [{text: 'Tamam', onPress: () => null}],
                       );
                     }}>
@@ -1204,8 +983,8 @@ function TabMenuScreenIndividual({navigation}) {
                   <TouchableOpacity
                     onPress={() => {
                       Alert.alert(
-                        'VAL-E',
-                        'Çok yakında VAL-E ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
+                        'Kolay Garaj',
+                        'Çok yakında Kolay Garaj ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
                         [{text: 'Tamam', onPress: () => null}],
                       );
                     }}>
@@ -1272,8 +1051,8 @@ function TabMenuScreenIndividual({navigation}) {
                   <TouchableOpacity
                     onPress={() => {
                       Alert.alert(
-                        'VAL-E',
-                        'Çok yakında VAL-E ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
+                        'Kolay Garaj',
+                        'Çok yakında Kolay Garaj ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
                         [{text: 'Tamam', onPress: () => null}],
                       );
                     }}>
@@ -1287,8 +1066,8 @@ function TabMenuScreenIndividual({navigation}) {
                   <TouchableOpacity
                     onPress={() => {
                       Alert.alert(
-                        'VAL-E',
-                        'Çok yakında VAL-E ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
+                        'Kolay Garaj',
+                        'Çok yakında Kolay Garaj ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
                         [{text: 'Tamam', onPress: () => null}],
                       );
                     }}>
@@ -1355,8 +1134,8 @@ function TabMenuScreenIndividual({navigation}) {
                   <TouchableOpacity
                     onPress={() => {
                       Alert.alert(
-                        'VAL-E',
-                        'Çok yakında VAL-E ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
+                        'Kolay Garaj',
+                        'Çok yakında Kolay Garaj ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
                         [{text: 'Tamam', onPress: () => null}],
                       );
                     }}>
@@ -1370,8 +1149,8 @@ function TabMenuScreenIndividual({navigation}) {
                   <TouchableOpacity
                     onPress={() => {
                       Alert.alert(
-                        'VAL-E',
-                        'Çok yakında VAL-E ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
+                        'Kolay Garaj',
+                        'Çok yakında Kolay Garaj ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
                         [{text: 'Tamam', onPress: () => null}],
                       );
                     }}>
@@ -1449,8 +1228,8 @@ function TabMenuScreenIndividual({navigation}) {
                   <TouchableOpacity
                     onPress={() => {
                       Alert.alert(
-                        'VAL-E',
-                        'Çok yakında VAL-E ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
+                        'Kolay Garaj',
+                        'Çok yakında Kolay Garaj ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
                         [{text: 'Tamam', onPress: () => null}],
                       );
                     }}>
@@ -1464,8 +1243,8 @@ function TabMenuScreenIndividual({navigation}) {
                   <TouchableOpacity
                     onPress={() => {
                       Alert.alert(
-                        'VAL-E',
-                        'Çok yakında VAL-E ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
+                        'Kolay Garaj',
+                        'Çok yakında Kolay Garaj ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
                         [{text: 'Tamam', onPress: () => null}],
                       );
                     }}>
@@ -1532,8 +1311,8 @@ function TabMenuScreenIndividual({navigation}) {
                   <TouchableOpacity
                     onPress={() => {
                       Alert.alert(
-                        'VAL-E',
-                        'Çok yakında VAL-E ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
+                        'Kolay Garaj',
+                        'Çok yakında Kolay Garaj ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
                         [{text: 'Tamam', onPress: () => null}],
                       );
                     }}>
@@ -1547,8 +1326,8 @@ function TabMenuScreenIndividual({navigation}) {
                   <TouchableOpacity
                     onPress={() => {
                       Alert.alert(
-                        'VAL-E',
-                        'Çok yakında VAL-E ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
+                        'Kolay Garaj',
+                        'Çok yakında Kolay Garaj ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
                         [{text: 'Tamam', onPress: () => null}],
                       );
                     }}>
@@ -1643,8 +1422,8 @@ function TabMenuScreenCommercial({navigation}) {
                   <TouchableOpacity
                     onPress={() => {
                       Alert.alert(
-                        'VAL-E',
-                        'Çok yakında VAL-E ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
+                        'Kolay Garaj',
+                        'Çok yakında Kolay Garaj ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
                         [{text: 'Tamam', onPress: () => null}],
                       );
                     }}>
@@ -1658,8 +1437,8 @@ function TabMenuScreenCommercial({navigation}) {
                   <TouchableOpacity
                     onPress={() => {
                       Alert.alert(
-                        'VAL-E',
-                        'Çok yakında VAL-E ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
+                        'Kolay Garaj',
+                        'Çok yakında Kolay Garaj ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
                         [{text: 'Tamam', onPress: () => null}],
                       );
                     }}>
@@ -1726,8 +1505,8 @@ function TabMenuScreenCommercial({navigation}) {
                   <TouchableOpacity
                     onPress={() => {
                       Alert.alert(
-                        'VAL-E',
-                        'Çok yakında VAL-E ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
+                        'Kolay Garaj',
+                        'Çok yakında Kolay Garaj ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
                         [{text: 'Tamam', onPress: () => null}],
                       );
                     }}>
@@ -1741,8 +1520,8 @@ function TabMenuScreenCommercial({navigation}) {
                   <TouchableOpacity
                     onPress={() => {
                       Alert.alert(
-                        'VAL-E',
-                        'Çok yakında VAL-E ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
+                        'Kolay Garaj',
+                        'Çok yakında Kolay Garaj ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
                         [{text: 'Tamam', onPress: () => null}],
                       );
                     }}>
@@ -1809,8 +1588,8 @@ function TabMenuScreenCommercial({navigation}) {
                   <TouchableOpacity
                     onPress={() => {
                       Alert.alert(
-                        'VAL-E',
-                        'Çok yakında VAL-E ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
+                        'Kolay Garaj',
+                        'Çok yakında Kolay Garaj ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
                         [{text: 'Tamam', onPress: () => null}],
                       );
                     }}>
@@ -1824,8 +1603,8 @@ function TabMenuScreenCommercial({navigation}) {
                   <TouchableOpacity
                     onPress={() => {
                       Alert.alert(
-                        'VAL-E',
-                        'Çok yakında VAL-E ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
+                        'Kolay Garaj',
+                        'Çok yakında Kolay Garaj ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
                         [{text: 'Tamam', onPress: () => null}],
                       );
                     }}>
@@ -1903,8 +1682,8 @@ function TabMenuScreenCommercial({navigation}) {
                   <TouchableOpacity
                     onPress={() => {
                       Alert.alert(
-                        'VAL-E',
-                        'Çok yakında VAL-E ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
+                        'Kolay Garaj',
+                        'Çok yakında Kolay Garaj ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
                         [{text: 'Tamam', onPress: () => null}],
                       );
                     }}>
@@ -1918,8 +1697,8 @@ function TabMenuScreenCommercial({navigation}) {
                   <TouchableOpacity
                     onPress={() => {
                       Alert.alert(
-                        'VAL-E',
-                        'Çok yakında VAL-E ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
+                        'Kolay Garaj',
+                        'Çok yakında Kolay Garaj ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
                         [{text: 'Tamam', onPress: () => null}],
                       );
                     }}>
@@ -1987,8 +1766,8 @@ function TabMenuScreenCommercial({navigation}) {
                   <TouchableOpacity
                     onPress={() => {
                       Alert.alert(
-                        'VAL-E',
-                        'Çok yakında VAL-E ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
+                        'Kolay Garaj',
+                        'Çok yakında Kolay Garaj ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
                         [{text: 'Tamam', onPress: () => null}],
                       );
                     }}>
@@ -2002,8 +1781,8 @@ function TabMenuScreenCommercial({navigation}) {
                   <TouchableOpacity
                     onPress={() => {
                       Alert.alert(
-                        'VAL-E',
-                        'Çok yakında VAL-E ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
+                        'Kolay Garaj',
+                        'Çok yakında Kolay Garaj ile yakınındaki hizmet verenleri görebileceksin, bizi takip etmeye devam et.',
                         [{text: 'Tamam', onPress: () => null}],
                       );
                     }}>
@@ -2064,19 +1843,11 @@ const App: () => Node = () => {
           component={TabMenuScreenIndividual}
         />
         <Stack.Screen name="CarTowService" component={CarTowServicePage} />
-        <Stack.Screen name="CarWashService" component={CarWashServicePage} />
         <Stack.Screen name="CarTireService" component={CarTireServicePage} />
         <Stack.Screen
           name="CarRepairService"
           component={CarRepairServicePage}
         />
-
-        <Stack.Screen
-          name="CarBatteryService"
-          component={CarBatteryServicePage}
-        />
-        <Stack.Screen name="CarKeyService" component={CarKeyServicePage} />
-        <Stack.Screen name="CarPartsService" component={CarPartsServicePage} />
 
         <Stack.Screen
           name="CommercialUsersList"

@@ -38,8 +38,8 @@ export class LocationSelected extends Component {
           const granted = await PermissionsAndroid.request(
             PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
             {
-              title: 'VAL-E',
-              message: 'VAL-E konum servislerini kullanmak için izin istiyor.',
+              title: 'Kolay Garaj',
+              message: 'Kolay Garaj konum servislerini kullanmak için izin istiyor.',
               buttonNeutral: 'Daha Sonra Sor',
               buttonNegative: 'İzin Verme',
               buttonPositive: 'İzin Ver',

@@ -1550,7 +1550,7 @@ export class IndividualUserCampaign extends Component {
           });
         } else {
           Alert.alert(
-            'VAL-E',
+            'Kolay Garaj',
             'Aradığınız kriterlerde hizmet/kampanya paketi bulunmamaktadır.',
             [{text: 'Tamam', onPress: () => null}],
           );
